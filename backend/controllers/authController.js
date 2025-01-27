@@ -31,12 +31,13 @@ authController.login = async (req,res) =>{
         const token = jwt.sign(
             { userId: userDetails.dataValues.id, 
               email: userDetails.dataValues.email,
-              type: userDetails.dataValues.userType
+              type: userDetails.dataValues.userType,
+              name: userDetails.name
             },
             JWT_SECRET,
             { expiresIn: '4h' }
         );
-        res.json({ message: 'Login successful', token:`Bearer ${token}`});
+        res.json({ message: 'Login successful', token:`Bearer ${token}`, userType:userDetails.userType});
     } catch(err){
         res.status(500).json({ message: 'Error Logging in'});
     }

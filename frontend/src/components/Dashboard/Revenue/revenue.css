@@ -1,0 +1,22 @@
+.revenue-container {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  .revenue-title{
+    margin: 20px;
+    color: aqua;
+  }
+  .loading {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 50px;
+  }
+  

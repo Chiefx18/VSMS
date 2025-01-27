@@ -15,7 +15,8 @@ router.post('/auth/verifyToken', authController.verifyToken);
 
 // User Routes
 router.get('/user',authController.verifyToken, userController.getUserProfile);
-router.get('/user/complaints', authController.verifyToken, userController.getAllUserComplaints)
+router.get('/user/complaints', authController.verifyToken, userController.getUserComplaints);
+router.get('/user/allComplaints', authController.verifyToken, userController.getAllUserComplaints);
 router.post('/user/registerComplaint',authController.verifyToken, userController.registerComplaints);
 router.post('/user/pay',authController.verifyToken, userController.payForComplaint);
 
@@ -31,7 +32,8 @@ router.delete('/vehicle/delete',authController.verifyToken, vehicleController.op
 
 // Component Routes
 router.post('/component/add', authController.verifyToken, componentController.operationsAddComponent);
-router.get('/component', componentController.operationsGetAllComponents);
+router.get('/component', componentController.operationsGetAllVehicleComponents);
+router.get('/allComponent', componentController.operationsGetAllComponents);
 router.put('/Component/edit',authController.verifyToken, componentController.operationsEditComponent);
 router.delete('/Component/delete',authController.verifyToken, componentController.operationsDeleteComponent);
 

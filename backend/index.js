@@ -4,7 +4,9 @@ app.use(express.json());
 const PORT = 4000;
 const { sequelize } = require('./db');
 const routes = require('./routes');
+const cors = require('cors');
 
+app.use(cors());
 
 app.get('/',(req,res)=>{
     res.send('App is working')

@@ -21,6 +21,15 @@ componentController.operationsAddComponent = async(req,res) =>{
         res.status(500).json({message:"Error Adding Component"});
     }
 }
+componentController.operationsGetAllVehicleComponents = async(req,res) =>{
+    try {
+        const { vehicleId } = req.query;
+        const components = await VehicleComponent.findAll({where :{vehicleId:vehicleId}});
+        res.status(200).json({message:'Component Fetched Successfully',data:components});
+    } catch(err) {
+        res.status(500).json({message:"Error fetching all components"});
+    }
+}
 componentController.operationsGetAllComponents = async(req,res) =>{
     try {
         const components = await VehicleComponent.findAll();
@@ -34,7 +43,7 @@ componentController.operationsEditComponent = async(req,res) =>{
         const { name , vehicleId, price, quantity, componentId} = req.body;
         const userType = req.user.type;
         if(name === null || vehicleId === null || price === null || quantity === null){
-            res.status(500).json({message:"Vehicle name or type not sent"})
+            res.status(500).json({message:"Component details not sent"})
         }
         if(userType !== constants.USER_TYPE.OPERATIONS){
             res.status(401).json({message:"You are not allowed to enter these details"});

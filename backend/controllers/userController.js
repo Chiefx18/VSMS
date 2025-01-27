@@ -32,11 +32,21 @@ userController.registerComplaints = async (req,res) =>{
     }
 }
 
-userController.getAllUserComplaints = async (req,res) =>{
+userController.getUserComplaints = async (req,res) =>{
     try {
         const userDetails = req.user;
         const id = userDetails.userId;
         const complaints = await UserComplaints.findAll({where:{userId:id}});
+        res.status(200).json({message:"All Complaints fetched Successfully", data:complaints}); 
+    } catch (err){
+        res.status(500).json({message:"Error fetching complaints"});
+    }
+}
+userController.getAllUserComplaints = async (req,res) =>{
+    try {
+        const userDetails = req.user;
+        const id = userDetails.userId;
+        const complaints = await UserComplaints.findAll();
         res.status(200).json({message:"All Complaints fetched Successfully", data:complaints}); 
     } catch (err){
         res.status(500).json({message:"Error fetching complaints"});

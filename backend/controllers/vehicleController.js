@@ -33,7 +33,7 @@ vehicleController.operationsEditVehicle = async(req,res) =>{
     try {
         const { name , vehicleType, vehicleId} = req.body;
         const userType = req.user.type;
-        if(name === null || vehicleType === null || vehicleId){
+        if(name === null || vehicleType === null || vehicleId === null){
             res.status(500).json({message:"Vehicle name or type not sent"})
         }
         if(userType !== constants.USER_TYPE.OPERATIONS){

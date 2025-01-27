@@ -1,0 +1,31 @@
+
+.resolve-complaints{
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.complaint-resolve-button{
+    border: none;
+    background-color: rgb(255, 51, 0);
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.complaint-resolved-button{
+    border: none;
+    background-color: green;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    height: 50px;
+    width: 200px;
+    cursor: not-allowed;
+    border-radius: 10px;
+}

@@ -1,0 +1,55 @@
+.register-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+.complaint-register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.complaint-register-form select {
+    height: 5vh;
+    width: 20vw;
+}
+
+.complaint-register-form input {
+    height: 3vh;
+    width: 20vw;
+}
+
+.complaint-register-form textarea {
+    height: 5vh;
+    width: 20vw;
+    margin: 10px;
+    background-color: white;
+}
+
+.submit-button {
+    border: none;
+    height: 50px;
+    width: 200px;
+    color: white;
+    background-color: deeppink;
+    margin: 10px;
+    font-weight: bold;
+    font-size: medium;
+    text-align: center;
+    cursor: pointer;
+    align-self: center;
+}
