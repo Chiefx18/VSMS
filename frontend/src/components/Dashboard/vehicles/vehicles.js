@@ -17,7 +17,6 @@ export default function Vehicles({ value, onRefresh }) {
                 data: { vehicleId: value.id },
                 headers: { Authorization: token },
             });
-            console.log(response);
             alert('Vehicle Deleted Successfully');
             window.location = "/";
         } catch (error) {

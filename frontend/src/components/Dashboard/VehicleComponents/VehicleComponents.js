@@ -21,12 +21,11 @@ export default function VehicleComponents({ value }) {
                 data: { componentId: value.id },
                 headers: { Authorization: token },
             });
-            console.log(response);
             alert('Component Deleted Successfully');
             window.location = "/";
         } catch (error) {
-            console.error('Error deleting vehicle:', error);
-            alert('Failed to delete the vehicle. Please try again.');
+            console.error('Error deleting Component:', error);
+            alert('Failed to delete the Component. Please try again.');
         }
     };
 
@@ -44,7 +43,6 @@ export default function VehicleComponents({ value }) {
                 },
                 { headers: { Authorization: token } }
             );
-            console.log(response);
             alert('Component Updated Successfully');
             setIsEditing(false);
             window.location = "/"

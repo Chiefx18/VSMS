@@ -19,7 +19,6 @@ export default function Revenue() {
         });
         setRevenueData(response.data.revenue); // Assuming revenue data is in `data.data`
         setLoading(false);
-        console.log(response);
       } catch (err) {
         console.error('Error fetching revenue data:', err);
         setError('Failed to load revenue data');
@@ -40,13 +39,13 @@ export default function Revenue() {
         <LineChart
           data={revenueData}
           margin={{
-            top: 20, // Reduced to prevent grid from overlapping
+            top: 20,
             right: 20,
             left: 20,
             bottom: 0,
           }}
         >
-          <CartesianGrid stroke="#444" strokeDasharray="3 3" horizontal vertical={false} /> {/* Grid below chart */}
+          <CartesianGrid stroke="#444" strokeDasharray="3 3" horizontal vertical={false} />
           <XAxis 
             dataKey="date" 
             tick={{ fontSize: 12, fill: "#fff" }} 

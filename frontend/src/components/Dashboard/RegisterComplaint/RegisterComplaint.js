@@ -83,7 +83,7 @@ export default function RegisterComplaint() {
       const response = await axios.post(constants.API_ROUTES.USER.REGISTER_COMPLAINT, formData, {
         headers: { Authorization: token },
       });
-      console.log("Complaint Registered Successfully:", response.data);
+      alert("Complaint Registered Successfully:");
     } catch (error) {
       console.error("Error registering complaint", error);
     }

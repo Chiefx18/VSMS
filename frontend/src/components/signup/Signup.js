@@ -23,7 +23,6 @@ export default function Login() {
     e.preventDefault();
     const url = constants.API_ROUTES.AUTH.SIGNUP;
     const {data:res} = await axios.post(url,data);
-    console.log(res.message);
     navigate("/login")
   }
 
@@ -38,7 +37,6 @@ export default function Login() {
         </button>
         </Link>
       </div>
-      {/* login form  */}
       <form className='signup-form' onSubmit={handleSubmit}>
         <input 
           type="text" 

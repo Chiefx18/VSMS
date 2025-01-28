@@ -21,7 +21,6 @@ export default function Login() {
     e.preventDefault();
     const url = constants.API_ROUTES.AUTH.LOGIN;
     const {data:res} = await axios.post(url,data);
-    console.log(res.message);
     localStorage.setItem('token', res.token);
     localStorage.setItem('userType', res.userType);
     localStorage.setItem('userId', res.userId);
