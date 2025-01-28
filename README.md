@@ -3,8 +3,6 @@
 ## Description
 The Vehicle Service Management System is a full-stack web application designed to streamline the management of vehicle services. The system allows users to perform various operations, such as managing vehicles, handling service complaints, viewing revenue reports, and more. It provides two user roles: **Customer** and **Operations**, ensuring tailored functionalities for each role.
 
-The frontend is built with **React.js**, styled with **CSS**, and includes visualizations using **Recharts**. The backend is developed using **Node.js** and **Express.js**, with **SQL** for the database, and employs **bcrypt.js** for secure password hashing and **JWT tokens** for authentication.
-
 ---
 
 ## Video Links
