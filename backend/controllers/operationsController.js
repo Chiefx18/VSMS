@@ -26,7 +26,7 @@ operationsController.getRevenue = async (req,res)=>{
    try { 
     const { type } = req.user;
     if(type !== constants.USER_TYPE.OPERATIONS){
-        res.status(401).json({message:"You are not allowed to enter these details"});
+        res.status(401).json({message:"You are not allowed to view these details"});
     }
     const limit = parseInt(req.query.limit) || 10;
     const offset = parseInt(req.query.offset) || 0;
