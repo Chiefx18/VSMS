@@ -17,7 +17,11 @@ The frontend is built with **React.js**, styled with **CSS**, and includes visua
   
 ---
 ## Video Links
--
+-[Add,Edit,Delete Vehicle and Component](https://drive.google.com/file/d/1v_hC1x5BmNwNzzLO0RZcQ6jvDhAteMQ_/view?usp=drive_link)
+-[Register Complaint](https://drive.google.com/file/d/1ALOb9_tY1OtaYxVje2ELaxUTTRQi7WVh/view?usp=drive_link)
+-[Resolve Comlaint](https://drive.google.com/file/d/1GlDsHfCbltD7W8117ImAqrQ5A2py3gEd/view?usp=drive_link)
+-[Pay for Comlaint](https://drive.google.com/file/d/1jIR1CP3H7B4s431GD0TUScrvauoJkWV6/view?usp=drive_link)
+-[Revenue Graph](https://drive.google.com/file/d/11D9wc8J854Fp2sb6yBHQvO9NMkI3nNfG/view?usp=drive_link)
 ---
 
 ## Tech Stack
