@@ -59,7 +59,7 @@ The frontend is built with **React.js**, styled with **CSS**, and includes visua
    - Create a `.env` file in the `backend` directory.
    - Add the following variables:
      ```env
-     PORT=5000
+     PORT=4000
      DATABASE_URL=<your-database-url>
      JWT_SECRET=<your-jwt-secret>
      ```
