@@ -37,7 +37,6 @@ export default function Operations() {
           headers: { Authorization: token },
         });
         setProfile(response.data.data);
-        console.log(response.data.data);
       } catch (error) {
         console.error('Error fetching user profile', error);
       }
@@ -72,7 +71,6 @@ export default function Operations() {
           headers: { Authorization: token },
         });
         setAllVehicles(response.data.data);
-        console.log(response);
       } catch (error) {
         console.error('Error fetching vehicles', error);
       }
@@ -90,7 +88,6 @@ export default function Operations() {
           headers: { Authorization: token },
         });
         setAllVehicleComponents(response.data.data);
-        console.log(response);
       } catch (error) {
         console.error('Error fetching components', error);
       }
@@ -116,9 +113,9 @@ export default function Operations() {
       const response = await axios.post(constants.API_ROUTES.VEHICLE.ADD_VEHICLES, vehicleData, {
         headers: { Authorization: token },
       });
-      setAllVehicles((prev) => [...prev, response.data.data]); // Add the new vehicle to the list
-      setNewVehicleModal(false); // Close the modal
-      setVehicleData({ name: '', vehicleType: '' }); // Clear the form
+      setAllVehicles((prev) => [...prev, response.data.data]); 
+      setNewVehicleModal(false);
+      setVehicleData({ name: '', vehicleType: '' }); 
       window.location ="/"
     } catch (error) {
         console.error('Error adding vehicle', error);
@@ -132,9 +129,9 @@ const handleAddComponent = async () => {
         const response = await axios.post(constants.API_ROUTES.COMPONENT.ADD_COMPONENTS, componentData, {
             headers: { Authorization: token },
         });
-        setAllVehicleComponents((prev) => [...prev, response.data.data]); // Add the new component to the list
-        setNewComponentModal(false); // Close the modal
-        setComponentData({ name: '', price: '' }); // Clear the form
+        setAllVehicleComponents((prev) => [...prev, response.data.data]); 
+        setNewComponentModal(false); 
+        setComponentData({ name: '', price: '' });
         window.location ="/"
     } catch (error) {
       console.error('Error adding component', error);
