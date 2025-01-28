@@ -9,11 +9,11 @@ componentController.operationsAddComponent = async(req,res) =>{
     try {
         const { name , vehicleId, price, quantity } = req.body;
         const userType = req.user.type;
-        if(name === null || vehicleId === null || price === null || quantity === null){
-            res.status(500).json({message:"Vehicle name or type not sent"})
-        }
         if(userType !== constants.USER_TYPE.OPERATIONS){
             res.status(401).json({message:"You are not allowed to enter these details"});
+        }
+        if(name === null || vehicleId === null || price === null || quantity === null){
+            res.status(500).json({message:"Component details not sent"})
         }
         await VehicleComponent.create({name, vehicleId, price, quantity});
         res.status(200).json({message:'Component Added Successfully'});
@@ -27,13 +27,13 @@ componentController.operationsGetAllVehicleComponents = async(req,res) =>{
         const components = await VehicleComponent.findAll({where :{vehicleId:vehicleId}});
         res.status(200).json({message:'Component Fetched Successfully',data:components});
     } catch(err) {
-        res.status(500).json({message:"Error fetching all components"});
+        res.status(500).json({message:"Error fetching components"});
     }
 }
 componentController.operationsGetAllComponents = async(req,res) =>{
     try {
         const components = await VehicleComponent.findAll();
-        res.status(200).json({message:'Component Fetched Successfully',data:components});
+        res.status(200).json({message:'All Components Fetched Successfully',data:components});
     } catch(err) {
         res.status(500).json({message:"Error fetching all components"});
     }
@@ -42,11 +42,11 @@ componentController.operationsEditComponent = async(req,res) =>{
     try {
         const { name , vehicleId, price, quantity, componentId} = req.body;
         const userType = req.user.type;
-        if(name === null || vehicleId === null || price === null || quantity === null){
-            res.status(500).json({message:"Component details not sent"})
-        }
         if(userType !== constants.USER_TYPE.OPERATIONS){
             res.status(401).json({message:"You are not allowed to enter these details"});
+        }
+        if(name === null || vehicleId === null || price === null || quantity === null){
+            res.status(500).json({message:"Component details not sent"})
         }
         const data = {
             name,
@@ -64,11 +64,11 @@ componentController.operationsDeleteComponent = async(req,res) =>{
     try {
         const {componentId} = req.body;
         const userType = req.user.type;
-        if(componentId === null){
-            res.status(500).json({message:"Vehicle Id not sent"})
-        }
         if(userType !== constants.USER_TYPE.OPERATIONS){
             res.status(401).json({message:"You are not allowed to delete"});
+        }
+        if(componentId === null){
+            res.status(500).json({message:"Component Id not sent"})
         }
         await VehicleComponent.destroy({where :{id: componentId}});
         res.status(200).json({message:'Component deleted Successfully'});
