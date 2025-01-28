@@ -24,7 +24,7 @@ vehicleController.operationsAddVehicle = async(req,res) =>{
 vehicleController.operationsGetAllVehicles = async(req,res) =>{
     try {
         const vehicles = await Vehicle.findAll();
-        res.status(200).json({message:'Vehicle Added Successfully',data:vehicles});
+        res.status(200).json({message:'Vehicle fetched Successfully',data:vehicles});
     } catch(err) {
         res.status(500).json({message:"Error fetching all vehicle"});
     }
@@ -60,9 +60,9 @@ vehicleController.operationsDeleteVehicle = async(req,res) =>{
             res.status(401).json({message:"You are not allowed to delete"});
         }
         await Vehicle.destroy({where :{id: vehicleId}});
-        res.status(200).json({message:'Vehicle updated Successfully'});
+        res.status(200).json({message:'Vehicle deleted Successfully'});
     } catch(err) {
-        res.status(500).json({message:"Error updating vehicle"});
+        res.status(500).json({message:"Error deleted vehicle"});
     }
 }
 
