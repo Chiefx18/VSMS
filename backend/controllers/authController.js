@@ -37,7 +37,11 @@ authController.login = async (req,res) =>{
             JWT_SECRET,
             { expiresIn: '4h' }
         );
-        res.json({ message: 'Login successful', token:`Bearer ${token}`, userType:userDetails.userType});
+        res.json({ message: 'Login successful', 
+            token:`Bearer ${token}`, 
+            userType:userDetails.userType,
+            userId: userDetails.id,
+        });
     } catch(err){
         res.status(500).json({ message: 'Error Logging in'});
     }
