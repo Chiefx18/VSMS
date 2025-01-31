@@ -41,25 +41,29 @@ The Vehicle Service Management System is a full-stack web application designed t
 ### Backend Setup (Django)
 
 1. Clone the repository:
-   ```bash
+   ```
+   bash
    git clone <repository-url>
    cd backend
 
 
 2. Set up a virtual environment (if using venv):
-   ```python -m venv venv
+   ```
+   python -m venv venv
    source venv/bin/activate 
    ```
 
 3. Install backend dependencies:
-     ``` pip install -r requirements.txt
+     ```
+     pip install -r requirements.txt
      ```
 
 4. Configure the MySQL database:
  - Make sure you have a MySQL instance running.
  - Create a database for the project (e.g., vsms_db).
  - In backend/settings.py, configure your database settings:
-   ```DATABASES = {
+   ```
+   DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vsms_db',
@@ -71,7 +75,8 @@ The Vehicle Service Management System is a full-stack web application designed t
    }
    ```
 5. Run migrations to set up the database schema:
-   ```python manage.py makemigrations
+   ```
+   python manage.py makemigrations
    python manage.py migrate
    python manage.py runserver
    ```
@@ -82,24 +87,28 @@ The Vehicle Service Management System is a full-stack web application designed t
 
 ### Frontend Setup
 1. Navigate to the frontend directory:
-   ```bash
+   ```
+   bash
    cd frontend
    ```
 
 2. Install dependencies:
-   ```bash
+   ```
+   bash
    npm install
    ```
 
 3. Configure environment variables:
    - Create a `.env` file in the `frontend` directory.
    - Add the following variable:
-     ```env
+     ```
+     env
      BASE_URL=http://localhost:4000
      ```
 
 4. Start the frontend server:
-   ```bash
+   ```
+   bash
    npm start
    ```
    The frontend will run on `http://localhost:3000`.
