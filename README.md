@@ -52,7 +52,7 @@ The Vehicle Service Management System is a full-stack web application designed t
    ```
 
 3. Install backend dependencies:
-     ```pip install -r requirements.txt
+     ``` pip install -r requirements.txt
      ```
 
 4. Configure the MySQL database:
