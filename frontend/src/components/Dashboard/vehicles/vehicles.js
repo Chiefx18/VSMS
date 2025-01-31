@@ -83,7 +83,7 @@ export default function Vehicles({ value, onRefresh }) {
                     <div className="vehicle-card">
                         <h3>Vehicle ID: {value.id}</h3>
                         <p>Name: {value.name}</p>
-                        <p>Vehicle Type: {value.vehicleType} Wheeler</p>
+                        <p>Vehicle Type: {value.vehicle_type} Wheeler</p>
                     </div>
                     <div className='vehicle-actions'>
                         <button className='edit-vehicle-button' onClick={() => setIsEditing(true)}>Edit</button>

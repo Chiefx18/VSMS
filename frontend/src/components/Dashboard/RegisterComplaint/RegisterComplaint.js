@@ -84,6 +84,7 @@ export default function RegisterComplaint() {
         headers: { Authorization: token },
       });
       alert("Complaint Registered Successfully:");
+      window.location ="/";
     } catch (error) {
       console.error("Error registering complaint", error);
     }

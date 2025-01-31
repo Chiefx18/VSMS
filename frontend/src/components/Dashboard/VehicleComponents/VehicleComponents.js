@@ -103,7 +103,7 @@ export default function VehicleComponents({ value }) {
                     <div className="component-card">
                         <h3>Component Id : {value.id}</h3>
                         <p>Name : {value.name}</p>
-                        <p>Vehicle Id : {value.vehicleId}</p>
+                        <p>Vehicle Id : {value.vehicle_id}</p>
                         <p>Price : ₹{value.price}</p>
                         <p>Quantity : {value.quantity}</p>
                     </div>

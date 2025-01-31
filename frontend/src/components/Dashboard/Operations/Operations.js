@@ -36,7 +36,7 @@ export default function Operations() {
         const response = await axios.get(constants.API_ROUTES.USER.GET_PROFILE, {
           headers: { Authorization: token },
         });
-        setProfile(response.data.data);
+        setProfile(response.data);
       } catch (error) {
         console.error('Error fetching user profile', error);
       }
