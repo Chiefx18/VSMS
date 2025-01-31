@@ -23,17 +23,13 @@ def get_profile(request):
 @verify_token
 def register_complaint(request):
     try:
-        # Extract user details and request data
         user_details = request.user
         user_id = user_details.id
         data = request.data
-
-        # Check if the vehicle_id exists in the Vehicle table
         vehicle_id = data.get('vehicleId')
         if not Vehicle.objects.filter(id=vehicle_id).exists():
             return Response({'message': 'Invalid vehicleId. Vehicle does not exist.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Create the complaint if vehicle_id is valid
         complaint = UserComplaint.objects.create(
             user_id=user_id,
             vehicle_id=vehicle_id,

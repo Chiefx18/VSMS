@@ -26,7 +26,6 @@ def signup(request):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 
-# Login view to authenticate and generate token
 def login(request):
     if request.method == 'POST':
         try:
@@ -34,16 +33,13 @@ def login(request):
             email = data.get("email")
             password = data.get("password")
 
-            # Check if user exists
             user = User.objects.filter(email=email).first()
             if not user:
                 return JsonResponse({"error": "Invalid email or password"}, status=400)
 
-            # Check if the provided password matches the stored hash
             if not check_password(password, user.password):
                 return JsonResponse({"error": "Invalid email or password"}, status=400)
-
-            # Generate token (in this case, it's just a simple token `aut_{userId}`)
+            
             token = f"Bearer auth_{user.id}"
 
             return JsonResponse({"message": "Login successful", "token": token, "userId": user.id, "userType":user.userType}, status=200)

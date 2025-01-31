@@ -85,15 +85,12 @@ def get_vehicle_components(request):
     try:
         vehicle_id = request.query_params.get('vehicleId')
         
-        # Ensure vehicle_id is provided
         if not vehicle_id:
             return Response({"message": "Vehicle ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
-        
-        # Check if the vehicle exists
+
         if not Vehicle.objects.filter(id=vehicle_id).exists():
             return Response({"message": "Vehicle with the given ID does not exist"}, status=status.HTTP_404_NOT_FOUND)
-        
-        # Fetch components for the vehicle
+
         components = VehicleComponent.objects.filter(vehicle_id=vehicle_id).values()
         
         return Response({"message": "Components fetched Successfully", "data": list(components)}, status=status.HTTP_200_OK)
