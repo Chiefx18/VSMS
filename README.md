@@ -98,12 +98,10 @@ The Vehicle Service Management System is a full-stack web application designed t
    npm install
    ```
 
-3. Configure environment variables:
-   - Create a `.env` file in the `frontend` directory.
-   - Add the following variable:
+3. Configure constant variables:
+   - Configure the Base urls the backend and other varaibales according to your server ports:
      ```
-     env
-     BASE_URL=http://localhost:4000
+     BASE_URL=http://localhost:8000
      ```
 
 4. Start the frontend server:
